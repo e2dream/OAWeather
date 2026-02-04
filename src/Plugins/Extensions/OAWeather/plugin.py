@@ -384,14 +384,14 @@ class OAWeatherOverview(Screen):
 		self["actions"] = ActionMap(["OAWeatherActions",
 									"ColorActions",
 									"InfoActions"], {
-													"ok": self.keyOk,
+													# "ok": self.keyOk, # crash pli
 													"cancel": self.close,
 													"red": self.close,
 													"yellow": self.favoriteUp,
 													"blue": self.favoriteDown,
 													"green": self.favoriteChoice,
-													"menu": self.config,
-													"info": self.keyOk
+													"menu": self.config
+													# "info": self.keyOk
 													}, -1)
 		for idx in range(1, 6):
 			self[f"weekday{idx}_temp"] = StaticText()
