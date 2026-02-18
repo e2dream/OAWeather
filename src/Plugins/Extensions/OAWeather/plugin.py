@@ -658,7 +658,6 @@ class OAWeatherDetailview(Screen):
 		if responses:  # collect latest available data
 			weather = responses[0]["weather"][0]
 			current = weather["current"]
-			nowcasting = weather["nowcasting"]
 			today = weather["forecast"]["days"][0]
 			sunrisestr = today["almanac"].get("sunrise", "")
 			sunrisestr = datetime.fromisoformat(sunrisestr).replace(tzinfo=None).isoformat() if sunrisestr else ""
@@ -680,7 +679,7 @@ class OAWeatherDetailview(Screen):
 			uvIndex = f"{round(current.get('uv', 0))}"
 			visibility = f"{round(current.get('vis', 0))} km"
 			shortDesc = current.get("pvdrCap", "")  # e.g. 'bewölkt'
-			longDesc = nowcasting.get("summary", "")  # e.g. "Der Himmel wird bewölkt."
+			longDesc = current.get("raintext", "")  # e.g. "Der Himmel wird bewölkt."
 			yahoocode = weatherhandler.WI.convert2icon("MSN", current.get("symbol", "")).get("yahooCode")  # e.g. 'n4000' -> {'yahooCode': '26', 'meteoCode': 'Y'}
 			yahoocode = self.nightSwitch(yahoocode, self.getIsNight(currtime, sunrisestr, sunsetstr))
 			iconfile = join(iconpath, f"{yahoocode}.png")
