@@ -129,7 +129,7 @@ config.plugins.OAWeather.detailLevel = ConfigSelection(default="default", choice
 config.plugins.OAWeather.tempUnit = ConfigSelection(default="Celsius", choices=[("Celsius", _("Celsius")), ("Fahrenheit", _("Fahrenheit"))])
 config.plugins.OAWeather.windspeedMetricUnit = ConfigSelection(default="km/h", choices=[("km/h", _("km/h")), ("m/s", _("m/s"))])
 config.plugins.OAWeather.trendarrows = ConfigSelection(default=1, choices=[(0, _("Disabled")), (1, "▲▼"), (2, "∆∇"), (3, "↑↓"), (4, "↥↧"), (5, "⇧⇩"), (6, "⇑⇓"), (7, "∧∨"), (8, "<>"), (9, "+-")])
-config.plugins.OAWeather.weatherservice = ConfigSelection(default="OpenMeteo", choices=[("MSN", _("MSN weather")), ("OpenMeteo", _("Open-Meteo Wetter")), ("OpenWeather", _("OpenWeatherMap"))])
+config.plugins.OAWeather.weatherservice = ConfigSelection(default="MSN", choices=[("MSN", _("MSN weather")), ("OpenMeteo", _("Open-Meteo Wetter")), ("OpenWeather", _("OpenWeatherMap"))])
 config.plugins.OAWeather.debug = ConfigYesNo(default=False)
 
 MODULE_NAME = "OAWeather"
